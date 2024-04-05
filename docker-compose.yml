@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  webapi:
+    image: 'webapi'
+    build: . 
+    volumes:
+      -.:/webapi
+      -node_modules:/webapi/node_modules
+    ports:
+      -5000:5000
+    environment:
+      -port = 5000
+    command: npm start
+
+volumes:
+ node_modules:
+    
